@@ -4,16 +4,16 @@ version = "0.1.1"
 edition = "2024"
 
 [dependencies]
-uefi = "0.32"
-uefi-services = "0.32"
+uefi = "0.36.1"
+uefi-services = "0.26.0"
 
 [profile.release]
 panic = "abort"
 lto = true
 strip = true
-opt-level = "2"
+opt-level = 2
 codegen-units = 1
 
 [[bin]]
 name = "bootloader"
-path = "rc/boot.rs"
+path = "src/boot.rs"
