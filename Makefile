@@ -4,7 +4,7 @@ all: build
 
 build:
 	@echo "🦀 Building VivOS UEFI Bootloader..."
-	cargo +nightly build --release --target x86_64-unknown-uefi
+	cargo +nightly build --release --target x86_64-unknown-uefi -Z build-std=core,compiler_builtins
 	@echo "📦 Creating disk image..."
 	@if [ ! -f boot.img ]; then \
 		dd if=/dev/zero of=boot.img bs=1M count=64; \
